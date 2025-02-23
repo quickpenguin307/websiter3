@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Automation System | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Home Automation System</h1>
+    <p>DiscereMinds | Smart Solutions for Your Home</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this project, you'll create a home automation system that allows you to control various devices in your home using a smartphone, voice commands, or even a pre-set schedule. The system will integrate sensors, smart switches, and a microcontroller to enable smart control of lighting, temperature, security, and more, providing convenience and energy efficiency.
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        The home automation system relies on the integration of sensors and smart devices, which communicate with a central microcontroller. Using an app or voice commands, you can automate tasks such as turning on lights, adjusting the thermostat, or checking security cameras. The system can also be programmed to run on a schedule or respond to environmental changes (such as motion or temperature).
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>1 Microcontroller (Arduino, Raspberry Pi, or similar)</li>
+      <li>Smart light bulbs or smart plugs</li>
+      <li>Temperature sensor (e.g., DHT11)</li>
+      <li>Motion sensor (e.g., PIR sensor)</li>
+      <li>Relay module (for controlling high-voltage devices)</li>
+      <li>Wi-Fi or Bluetooth module (for communication)</li>
+      <li>Smartphone or computer (for controlling the system)</li>
+      <li>Home automation app (e.g., Blynk, Home Assistant)</li>
+      <li>Power supply</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>Begin by setting up your microcontroller. If you're using Arduino, install the necessary libraries and software for communication and control.</li>
+      <li>Connect the sensors and smart devices (e.g., light bulbs, plugs) to the microcontroller according to the manufacturer's instructions.</li>
+      <li>Connect the motion sensor to the microcontroller. This sensor will be used to trigger actions such as turning on lights when motion is detected.</li>
+      <li>Connect the temperature sensor to monitor the room’s temperature. You can program the system to control the thermostat based on the data from this sensor.</li>
+      <li>Using a relay module, connect it to the smart plugs or switches to control other devices like fans or lights.</li>
+      <li>Program the system to respond to different triggers, such as motion detection, temperature changes, or time-based schedules.</li>
+      <li>Use a smartphone app or voice assistant to test the automation system. You should be able to control the devices remotely or through commands like "turn on the lights" or "adjust the thermostat to 70°F."</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      The home automation system should respond to environmental triggers or user commands. For instance, the lights should turn on when motion is detected, and the thermostat should adjust based on the temperature sensor readings. Observe how the system automates tasks and whether it operates as expected in various conditions.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>Ensure the sensors are correctly calibrated to avoid false readings or missed triggers.</li>
+        <li>Test the system in different conditions (e.g., varying light levels or room temperatures) to ensure reliability.</li>
+        <li>Try integrating additional devices, such as security cameras or door locks, to enhance the system's functionality.</li>
+        <li>Consider adding voice control integration using Google Assistant or Amazon Alexa for hands-free operation.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      The system works based on a combination of sensors, relays, and microcontroller programming. Sensors detect environmental changes, such as motion or temperature, and send data to the microcontroller. The microcontroller processes this data and triggers actions like turning on lights or adjusting the thermostat. The integration of Wi-Fi or Bluetooth modules allows remote control through a smartphone or voice assistant.
+    </p>
+    <p>
+      Automation can significantly improve efficiency and convenience in everyday life. By programming the system to respond to certain conditions or schedules, it becomes possible to automate repetitive tasks like lighting control and climate regulation, while also optimizing energy consumption.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Home+Automation+System" alt="Home Automation System">
+
+    <h2>Further Exploration</h2>
+    <p>
+      Once you've completed the basic system, consider expanding it with more advanced features. For instance, you could add security cameras, smart door locks, or even a weather station to provide more control and data to the system. You could also experiment with integrating machine learning to allow the system to learn user preferences and optimize automation based on usage patterns.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      The home automation project is a fantastic introduction to the world of smart homes and IoT (Internet of Things). By using a microcontroller, sensors, and smart devices, you can create a personalized system that responds to your needs, whether it's controlling lights, adjusting the temperature, or enhancing home security. This project not only showcases

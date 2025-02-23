@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raspberry Pi Starter Project | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Raspberry Pi Starter Project</h1>
+    <p>DiscereMinds | Empowering STEM Education</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this Raspberry Pi starter project, you'll learn how to set up and use your Raspberry Pi to blink an LED. This is a great beginner-level project that introduces you to programming in Python and working with the GPIO pins on the Raspberry Pi.
+    </p>
+
+    <h2>Components Required</h2>
+    <ul>
+      <li>Raspberry Pi (any model with GPIO pins, e.g., Raspberry Pi 4)</li>
+      <li>LED</li>
+      <li>220-ohm resistor</li>
+      <li>Jumper wires</li>
+      <li>Breadboard</li>
+      <li>Raspberry Pi power supply</li>
+      <li>Internet connection to set up Raspberry Pi (optional)</li>
+      <li>Python IDE (pre-installed on Raspberry Pi OS)</li>
+    </ul>
+
+    <h2>Setting Up the Circuit</h2>
+    <p>
+      Here are the steps to connect the components to your Raspberry Pi:
+    </p>
+    <ol>
+      <li>Insert the LED into the breadboard with the longer leg (positive) connected to a free row and the shorter leg (negative) connected to another row.</li>
+      <li>Place a 220-ohm resistor between the shorter leg (negative) of the LED and the ground (GND) row on the breadboard.</li>
+      <li>Connect a jumper wire from the positive leg of the LED to GPIO pin 18 on the Raspberry Pi (this is one of the general-purpose input/output pins).</li>
+      <li>Connect another jumper wire from the ground (GND) row of the breadboard to one of the GND pins on the Raspberry Pi.</li>
+    </ol>
+
+    <h2>Programming the Raspberry Pi</h2>
+    <p>
+      Follow these steps to write and run the Python program to blink the LED:
+    </p>
+    <ol>
+      <li>On your Raspberry Pi, open the terminal and type <code>sudo nano blink.py</code> to create a new Python script.</li>
+      <li>Enter the following Python code to blink the LED:</li>
+    </ol>
+
+    <pre>
+import RPi.GPIO as GPIO
+import time
+
+# Set up the GPIO pin
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)
+
+# Blink the LED
+while True:
+    GPIO.output(18, GPIO.HIGH)  # Turn LED on
+    time.sleep(1)                # Wait for 1 second
+    GPIO.output(18, GPIO.LOW)   # Turn LED off
+    time.sleep(1)                # Wait for 1 second
+    </pre>
+
+    <p>Save the file by pressing <strong>CTRL + X</strong>, then <strong>Y</strong> to confirm, and <strong>Enter</strong> to exit.</p>
+    <p>Run the script by typing <code>python3 blink.py</code> in the terminal. You should see the LED blink on and off every second.</p>
+
+    <h2>Observations</h2>
+    <p>
+      As the program runs, the LED will blink on and off at a 1-second interval. This project helps you understand basic Python programming and how to control hardware using GPIO pins on the Raspberry Pi.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Raspberry+Pi+LED+Project" alt="Raspberry Pi LED Project">
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

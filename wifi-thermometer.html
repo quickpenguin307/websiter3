@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WiFi Thermometer | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>WiFi Thermometer</h1>
+    <p>DiscereMinds | Empowering Smart Technology</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this project, you will create a WiFi-enabled thermometer that can measure the temperature of its environment and send the data over the internet to be monitored remotely. By integrating sensors like the DHT11 or DHT22 and using a microcontroller like the ESP8266 or ESP32, you can easily build a thermometer that connects to your home WiFi network. This project will teach you the basics of IoT (Internet of Things) and how to work with sensors and WiFi modules.
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        WiFi-enabled thermometers are a great way to track environmental conditions remotely. Using a simple temperature sensor connected to a microcontroller that supports WiFi, the thermometer can send real-time temperature data to a cloud server or your smartphone. With this data, you can monitor temperature changes from anywhere, which is useful for applications like smart home systems, weather stations, or temperature-sensitive storage.
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>ESP8266 or ESP32 microcontroller (both support WiFi)</li>
+      <li>DHT11 or DHT22 temperature and humidity sensor</li>
+      <li>Jumper wires</li>
+      <li>Breadboard</li>
+      <li>Resistor (typically 10k ohms for the DHT sensor)</li>
+      <li>USB cable to connect microcontroller to your computer</li>
+      <li>Arduino IDE or any compatible programming environment</li>
+      <li>WiFi network to connect to</li>
+      <li>Optional: Cloud platform like ThingSpeak or Blynk for remote monitoring</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>Start by connecting the DHT11 or DHT22 sensor to your microcontroller (ESP8266/ESP32). The sensor typically has three pins: VCC (power), GND (ground), and DATA (data). Use jumper wires to connect these to the corresponding pins on the microcontroller.</li>
+      <li>Next, install the necessary libraries for the DHT sensor and the WiFi module in the Arduino IDE. This will allow the microcontroller to read data from the sensor and send it over the internet.</li>
+      <li>Write the code to read the temperature from the DHT sensor. Use the WiFi credentials to connect the ESP8266/ESP32 to your home network.</li>
+      <li>In the code, set up the microcontroller to send temperature readings to a cloud platform (like ThingSpeak or Blynk) using HTTP requests. You can also set up the microcontroller to display the data on an LCD or OLED screen if desired.</li>
+      <li>Upload the code to the microcontroller and power it on. Your thermometer should now be connected to WiFi and start sending temperature readings to the cloud or display them on a screen.</li>
+      <li>Monitor the temperature remotely by accessing the cloud platform or using a mobile app like Blynk. You can also set up alerts to notify you when the temperature crosses a certain threshold.</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      You should see real-time temperature data being uploaded to the cloud or displayed locally on the screen. The temperature readings may fluctuate slightly due to the accuracy of the sensor, but they should generally remain stable. By monitoring the data, you can track temperature changes over time and even set up automatic actions based on specific conditions.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>Make sure the sensor is placed in an area where the temperature is relatively stable for accurate readings.</li>
+        <li>If you want to display the temperature locally, use an LCD or OLED screen that can easily connect to the ESP8266/ESP32.</li>
+        <li>When working with WiFi modules, ensure your microcontroller has reliable internet access to send the data.</li>
+        <li>Experiment with different cloud platforms and mobile apps to find the one that best suits your needs for remote monitoring.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      Temperature sensors like the DHT11 and DHT22 work by detecting changes in the surrounding environment and converting them into electrical signals. These signals are then processed by the microcontroller, which converts them into readable temperature values. By connecting the microcontroller to WiFi, the temperature data can be sent to cloud platforms, allowing you to monitor the temperature remotely. This project demonstrates the core principles of IoT—connecting devices to the internet to exchange data and enable remote control or monitoring.
+    </p>
+    <p>
+      The WiFi connectivity in this project allows for easy communication between the thermometer and any device with internet access. Cloud platforms such as ThingSpeak and Blynk provide an interface for you to view the data and even set up automated actions based on the temperature readings.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=WiFi+Thermometer" alt="WiFi Thermometer">
+
+    <h2>Further Exploration</h2>
+    <p>
+      Once you've set up your WiFi thermometer, you can explore additional features. For example, you could integrate a web dashboard for more advanced data visualization. You could also experiment with adding a humidity sensor to monitor both temperature and humidity simultaneously. Alternatively, try connecting the thermometer to other IoT devices in your home to create a more comprehensive smart home system.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      The WiFi thermometer is a great introduction to working with IoT devices and learning how to use sensors and microcontrollers to gather and transmit data. Whether you’re building a weather station, monitoring room temperature, or controlling smart devices based on temperature readings, this project provides valuable insight into how IoT can be applied to real-world situations.
+    </p>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

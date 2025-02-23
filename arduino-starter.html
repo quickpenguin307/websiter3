@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arduino Starter Project | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Arduino Starter Project</h1>
+    <p>DiscereMinds | Empowering STEM Education</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this basic Arduino starter project, you will learn how to light up an LED using your Arduino board. This simple project is perfect for beginners and helps you understand the fundamentals of working with Arduino and electronic components.
+    </p>
+
+    <h2>Components Required</h2>
+    <ul>
+      <li>Arduino board (e.g., Arduino Uno)</li>
+      <li>LED</li>
+      <li>220-ohm resistor</li>
+      <li>Breadboard and jumper wires</li>
+      <li>USB cable to connect Arduino to your computer</li>
+    </ul>
+
+    <h2>Setting Up the Circuit</h2>
+    <p>
+      Follow these steps to connect the components:
+    </p>
+    <ol>
+      <li>Place the LED on the breadboard, ensuring the longer leg (positive) is connected to a row on the breadboard.</li>
+      <li>Connect a 220-ohm resistor from the shorter leg (negative) of the LED to the ground (GND) row on the breadboard.</li>
+      <li>Connect a jumper wire from the positive leg of the LED to digital pin 13 on the Arduino board.</li>
+      <li>Connect another jumper wire from the ground row of the breadboard to a GND pin on the Arduino board.</li>
+    </ol>
+
+    <h2>Programming the Arduino</h2>
+    <p>
+      Now, you will program your Arduino to light up the LED. Follow these steps:
+    </p>
+    <ol>
+      <li>Open the Arduino IDE on your computer.</li>
+      <li>In the IDE, go to <strong>File > New</strong> to create a new sketch.</li>
+      <li>Write the following code into the sketch:</li>
+    </ol>
+
+    <pre>
+void setup() {
+  pinMode(13, OUTPUT); // Set pin 13 as an output
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // Turn the LED on
+  delay(1000); // Wait for 1 second
+  digitalWrite(13, LOW); // Turn the LED off
+  delay(1000); // Wait for 1 second
+}
+    </pre>
+
+    <p>After writing the code, click the upload button in the Arduino IDE to upload the code to your Arduino board.</p>
+
+    <h2>Observations</h2>
+    <p>
+      When the program runs, the LED should blink on and off every second. This project helps you understand basic Arduino programming and how to control hardware with code.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Arduino+LED+Project" alt="Arduino LED Project">
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiscereMinds - Empowering STEM Education</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* Header with Gradient Background */
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    /* Navigation Bar */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav li {
+      margin: 0 20px;
+    }
+    nav a {
+      display: block;
+      padding: 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #c33764;
+    }
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    /* Section Styling */
+    .section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* STEM Tabs */
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tabs button.active {
+      border-bottom: 3px solid #c33764;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Project Cards as Clickable Links */
+    .project {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .project:hover {
+      transform: scale(1.02);
+    }
+    .project h3 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    .project p {
+      margin-bottom: 10px;
+    }
+    /* Download Button */
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #a01f4d;
+    }
+    /* Footer */
+    footer {
+      background: #1d2671;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    /* Responsive Navigation */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>DiscereMinds</h1>
+    <p>Empowering STEM Education for All with Affordable Arduino & Raspberry Pi Projects</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#" class="nav-link active" data-target="home">Home</a></li>
+      <li><a href="#" class="nav-link" data-target="stem">STEM Projects</a></li>
+      <li><a href="#" class="nav-link" data-target="about">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- Home Section -->
+    <section id="home" class="section active">
+      <h2>Welcome to DiscereMinds</h2>
+      <p>
+        Our mission is to bring hands-on STEM learning to everyone, especially in underserved communities.
+        With simple, affordable projects using tools like Arduino and Raspberry Pi, we ignite curiosity and
+        empower innovators of tomorrow.
+      </p>
+      <img src="https://via.placeholder.com/900x300?text=STEM+Education" alt="STEM Education" style="width:100%; border-radius:5px; margin-top:20px;">
+      <p style="margin-top:20px; font-style: italic;">
+        "The important thing is not to stop questioning. Curiosity has its own reason for existence." – Albert Einstein
+      </p>
+    </section>
+
+    <!-- STEM Projects Section -->
+    <section id="stem" class="section">
+      <h2>Explore Our STEM Projects</h2>
+      <!-- STEM Tab Navigation -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="science">Science</button>
+        <button class="tab-btn" data-tab="technology">Technology</button>
+        <button class="tab-btn" data-tab="engineering">Engineering</button>
+        <button class="tab-btn" data-tab="math">Math</button>
+      </div>
+      <!-- Science Tab Content -->
+      <div id="science" class="tab-content active">
+        <a class="project" href="chemical-reactions.html" target="_blank">
+          <h3>Fun with Chemical Reactions</h3>
+          <p>
+            Explore safe and engaging chemical reactions that explain scientific principles in an interactive way.
+          </p>
+        </a>
+        <a class="project" href="crystal-growth.html" target="_blank">
+          <h3>Crystal Growth Experiment</h3>
+          <p>
+            Discover how crystals form and grow through a simple experiment using common household materials.
+          </p>
+        </a>
+        <a class="project" href="volcano-eruption.html" target="_blank">
+          <h3>DIY Volcano Eruption</h3>
+          <p>
+            Simulate a volcanic eruption using baking soda and vinegar to explore chemical reactions in a fun way.
+          </p>
+        </a>
+        <a class="project" href="water-filtration.html" target="_blank">
+          <h3>Water Filtration Experiment</h3>
+          <p>
+            Build a simple water filter and learn about the science behind water purification and environmental care.
+          </p>
+        </a>
+        <a class="project" href="oobleck.html" target="_blank">
+          <h3>Oobleck – Non-Newtonian Fluid</h3>
+          <p>
+            Mix cornstarch and water to create a non-Newtonian fluid that challenges the properties of solids and liquids.
+          </p>
+        </a>
+        <a class="project" href="invisible-ink.html" target="_blank">
+          <h3>Invisible Ink Experiment</h3>
+          <p>
+            Use lemon juice to write secret messages and reveal them with heat, exploring oxidation and color change.
+          </p>
+        </a>
+        <a class="project" href="egg-in-bottle.html" target="_blank">
+          <h3>Egg in a Bottle Trick</h3>
+          <p>
+            Demonstrate air pressure by drawing an egg into a bottle, showcasing the principles of atmospheric pressure.
+          </p>
+        </a>
+        <a class="project" href="static-electricity-butterfly.html" target="_blank">
+          <h3>Static Electricity Butterfly</h3>
+          <p>
+            Use static electricity to make a paper butterfly move, highlighting the effects of electrical charges.
+          </p>
+        </a>
+        <a class="project" href="cloud-in-jar.html" target="_blank">
+          <h3>Cloud in a Jar</h3>
+          <p>
+            Create a mini-cloud using warm water, ice, and aerosol spray to observe condensation and cloud formation.
+          </p>
+        </a>
+        <a class="project" href="diy-sundial.html" target="_blank">
+          <h3>DIY Sundial</h3>
+          <p>
+            Construct a sundial to track the movement of the sun and learn about Earth's rotation and timekeeping.
+          </p>
+        </a>
+        <a class="project" href="lava-lamp.html" target="_blank">
+          <h3>Lava Lamp Experiment</h3>
+          <p>
+            Build a homemade lava lamp with oil, water, and Alka-Seltzer to explore density differences and fluid dynamics.
+          </p>
+        </a>
+        <a class="project" href="density-column.html" target="_blank">
+          <h3>Density Column Experiment</h3>
+          <p>
+            Layer different liquids based on density to create a colorful column, revealing the science of fluid densities.
+          </p>
+        </a>
+      </div>
+      <!-- Technology Tab Content -->
+       <!-- Technology Tab Content -->
+<div id="technology" class="tab-content">
+  <a class="project" href="arduino-starter.html" target="_blank">
+    <h3>Arduino Starter Kit</h3>
+    <p>
+      Get hands-on with coding and electronics using our beginner-friendly Arduino projects that include detailed guides.
+    </p>
+  </a>
+  <a class="project" href="raspberry-pi.html" target="_blank">
+    <h3>Raspberry Pi Innovations</h3>
+    <p>
+      Dive into more advanced tech projects with Raspberry Pi, integrating programming with hardware solutions.
+    </p>
+  </a>
+  <a class="project" href="light-sensor.html" target="_blank">
+    <h3>Light Sensor Experiment</h3>
+    <p>
+      Learn the basics of sensor technology by building a simple light sensor to capture ambient light levels.
+    </p>
+  </a>
+  <a class="project" href="motion-sensor.html" target="_blank">
+    <h3>Motion Sensor Detector</h3>
+    <p>
+      Build a motion sensor to detect movement and integrate it into various interactive systems.
+    </p>
+  </a>
+  <a class="project" href="temperature-sensor.html" target="_blank">
+    <h3>Temperature Sensor</h3>
+    <p>
+      Learn how to use temperature sensors to monitor environmental conditions and trigger responses.
+    </p>
+  </a>
+  <a class="project" href="automatic-lighting.html" target="_blank">
+    <h3>Automatic Lighting System</h3>
+    <p>
+      Build a system that automatically controls lights based on ambient light levels or motion detection.
+    </p>
+  </a>
+  <a class="project" href="smart-door-lock.html" target="_blank">
+    <h3>Smart Door Lock</h3>
+    <p>
+      Create a smart door lock system using a Raspberry Pi and basic electronics to enhance security.
+    </p>
+  </a>
+  <a class="project" href="robot-arm.html" target="_blank">
+    <h3>Arduino Robot Arm</h3>
+    <p>
+      Control a robotic arm using an Arduino board and learn about robotics and automation systems.
+    </p>
+  </a>
+  <a class="project" href="home-automation.html" target="_blank">
+    <h3>Home Automation System</h3>
+    <p>
+      Use Arduino and sensors to create a smart home system that controls lights, appliances, and more.
+    </p>
+  </a>
+  <a class="project" href="voice-activated-assistant.html" target="_blank">
+    <h3>Voice-Activated Assistant</h3>
+    <p>
+      Build a voice-controlled system using a Raspberry Pi and integrate it with various devices for automation.
+    </p>
+  </a>
+  <a class="project" href="wifi-thermometer.html" target="_blank">
+    <h3>WiFi Thermometer</h3>
+    <p>
+      Create a WiFi-enabled thermometer that can send temperature data to a remote server or display.
+    </p>
+  </a>
+  <a class="project" href="smart-plant-watering.html" target="_blank">
+    <h3>Smart Plant Watering System</h3>
+    <p>
+      Build a system that automatically waters your plants based on soil moisture levels using an Arduino or Raspberry Pi.
+    </p>
+  </a>
+  <a class="project" href="weather-station.html" target="_blank">
+    <h3>Weather Station</h3>
+    <p>
+      Set up a weather station using various sensors to measure temperature, humidity, and air pressure.
+    </p>
+  </a>
+  <a class="project" href="wifi-security-camera.html" target="_blank">
+    <h3>WiFi Security Camera</h3>
+    <p>
+      Create a wireless security camera system with live streaming capabilities using a Raspberry Pi.
+    </p>
+  </a>
+</div>
+
+      <!-- Engineering Tab Content -->
+<!-- Engineering Tab Content -->
+<div id="engineering" class="tab-content">
+  <!-- Original Creative Building Challenges -->
+  <a class="project" href="bridge-building-challenge.html" target="_blank">
+    <h3>Bridge Building Challenge</h3>
+    <p>
+      Design and build a bridge using common materials, aiming for strength and cost-effectiveness.
+    </p>
+  </a>
+  <a class="project" href="egg-drop-challenge.html" target="_blank">
+    <h3>Egg Drop Challenge</h3>
+    <p>
+      Construct a protective structure to prevent an egg from breaking when dropped from a height.
+    </p>
+  </a>
+  <a class="project" href="mechanical-crane.html" target="_blank">
+    <h3>Mechanical Crane</h3>
+    <p>
+      Design and create a mechanical crane to move objects, demonstrating principles of levers and pulleys.
+    </p>
+  </a>
+  <a class="project" href="waterwheel.html" target="_blank">
+    <h3>Waterwheel</h3>
+    <p>
+      Build a simple waterwheel to convert water flow into mechanical energy, showcasing basic principles of engineering.
+    </p>
+  </a>
+
+  <!-- New Projects Without Technology -->
+  <a class="project" href="solar-powered-fan.html" target="_blank">
+    <h3>Solar-Powered Fan</h3>
+    <p>
+      Design and build a simple solar-powered fan using basic electrical components and a small solar panel.
+    </p>
+  </a>
+  <a class="project" href="mechanical-clock.html" target="_blank">
+    <h3>Mechanical Clock</h3>
+    <p>
+      Create a mechanical clock using gears, springs, and a motor to demonstrate time-keeping principles.
+    </p>
+  </a>
+  <a class="project" href="hydraulic-lift.html" target="_blank">
+    <h3>Hydraulic Lift</h3>
+    <p>
+      Build a hydraulic lift system to demonstrate the principles of force, pressure, and fluid dynamics.
+    </p>
+  </a>
+  <a class="project" href="wind-turbine-model.html" target="_blank">
+    <h3>Wind Turbine Model</h3>
+    <p>
+      Create a model of a wind turbine to understand renewable energy and its conversion into mechanical power.
+    </p>
+  </a>
+  <a class="project" href="catapult-design.html" target="_blank">
+    <h3>Catapult Design</h3>
+    <p>
+      Design and build a mechanical catapult to launch projectiles, exploring forces and motion.
+    </p>
+  </a>
+  <a class="project" href="water-powered-generator.html" target="_blank">
+    <h3>Water-Powered Generator</h3>
+    <p>
+      Build a small generator powered by flowing water to explore renewable energy concepts.
+    </p>
+  </a>
+
+  <!-- Two Additional Projects -->
+  <a class="project" href="pulley-system.html" target="_blank">
+    <h3>Pulley System</h3>
+    <p>
+      Build a simple pulley system to lift heavy objects, understanding mechanical advantage and force.
+    </p>
+  </a>
+  <a class="project" href="ballista.html" target="_blank">
+    <h3>Ballista</h3>
+    <p>
+      Create a mechanical ballista to launch projectiles, applying principles of tension and force.
+    </p>
+  </a>
+</div>
+
+      <!-- Math Tab Content -->
+      <div id="math" class="tab-content">
+        <a class="project" href="math-lessons.html" target="_blank">
+          <h3>Interactive Math Lessons</h3>
+          <p>
+            Enhance your math skills through interactive lessons and exercises that apply math concepts to real-world scenarios.
+          </p>
+        </a>
+        <a class="project" href="physics-challenges.html" target="_blank">
+          <h3>Physics Challenges</h3>
+          <p>
+            Solve puzzles and problems that bridge the gap between math and physics, available in multiple difficulty levels.
+          </p>
+        </a>
+      </div>
+      <!-- Download Materials -->
+      <a href="materials.zip" class="download-btn" download>Download Offline Materials</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>
+        DiscereMinds is dedicated to making STEM education accessible and engaging for all. We create affordable,
+        hands-on projects using Arduino and Raspberry Pi, helping to spark creativity and foster technical skills
+        in underserved communities.
+      </p>
+      <h3>Our Founders</h3>
+      <p>
+        A passionate group of educators and engineers, our founders bring years of experience in teaching and project
+        development, committed to bridging the educational gap.
+      </p>
+      <h3>Our Impact & Partners</h3>
+      <p>
+        By collaborating with various nonprofits we ensure our resources reach those who need them most.
+      </p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 DiscereMinds. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Navigation and Tabs -->
+  <script>
+    // Section Navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Remove active class from all nav links and sections
+        navLinks.forEach(link => link.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Add active class to clicked link and corresponding section
+        this.classList.add('active');
+        const targetId = this.getAttribute('data-target');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+
+    // STEM Tab Navigation
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all tab buttons and contents
+        tabButtons.forEach(button => button.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Activate the clicked tab and its corresponding content
+        this.classList.add('active');
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

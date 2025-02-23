@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robot Arm Project | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Robot Arm Project</h1>
+    <p>DiscereMinds | Innovating Robotics Education</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this project, you'll build a simple robotic arm that can be controlled using an Arduino and a set of motors. The robot arm will have multiple joints, allowing it to move and pick up objects. This project will help you understand the basic principles behind robotics, including kinematics, motor control, and programming.
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        The robot arm uses servos to control its movement at each joint. The Arduino sends signals to the servos to control their positions. By writing a program, you can control the arm to perform tasks like picking up small objects or moving to specific positions. The movement is based on the concept of inverse kinematics, where the arm’s end position (the gripper) is determined by the angles of its joints.
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>1 Arduino board (Uno, Nano, etc.)</li>
+      <li>4-6 Servo motors (for the joints of the arm)</li>
+      <li>Jumper wires</li>
+      <li>Breadboard</li>
+      <li>1 Robotic arm structure (can be purchased or 3D printed)</li>
+      <li>1 Gripper (optional for picking up objects)</li>
+      <li>Power supply (depending on the servos used)</li>
+      <li>Arduino IDE for programming</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>Start by assembling the robot arm structure, ensuring that the servos are securely attached to each joint.</li>
+      <li>Connect the servos to the Arduino using jumper wires. Each servo will need to be connected to a digital pin on the Arduino for control. Also, connect the power and ground wires to the appropriate pins.</li>
+      <li>In the Arduino IDE, write a program to control the movement of the servos. You can use the <code>Servo</code> library to make controlling the motors easier.</li>
+      <li>Upload the program to the Arduino and power the servos using the appropriate power supply.</li>
+      <li>Test the robot arm by sending commands to the servos to rotate to specific angles. You can also test the gripper (if added) to see if it can pick up small objects.</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      When you send commands to the Arduino, the servos should rotate to the desired positions. The arm will move based on the angles specified in your program. If you add a gripper to the arm, it should open and close to grab objects. Observe how the servos' movements affect the position of the arm and how the gripper can interact with objects.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>Make sure to calibrate the servos so that they move within their intended range without damaging the arm or components.</li>
+        <li>If you're having trouble with motor movement, check your power supply and ensure it's providing enough current for all the servos.</li>
+        <li>Experiment with different arm designs. For example, a larger arm may require more servos, and you may need to adjust the programming for optimal performance.</li>
+        <li>Try controlling the arm with a joystick or other input device for more interactive control.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      The robot arm relies on servos to create rotational movement at each joint. Servos are motors that can rotate to a specific angle, and they are controlled by sending a signal from the Arduino. In this project, each servo corresponds to a joint of the arm, and by adjusting the servo positions, you can control the movement of the arm.
+    </p>
+    <p>
+      Kinematics is the study of motion, and in the case of the robot arm, inverse kinematics refers to determining the angles at each joint that will position the arm’s gripper at a desired point in space. This is a key concept in robotics and automation.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Robot+Arm+Project" alt="Robot Arm Project">
+
+    <h2>Further Exploration</h2>
+    <p>
+      Once you have built and programmed your basic robot arm, you can explore advanced topics such as inverse kinematics, which allows you to calculate the precise angles needed to move the arm’s gripper to any position. You could also explore using sensors to enable the arm to interact with its environment or integrate a vision system to enable object recognition.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      The robot arm project is an excellent introduction to robotics and automation. By building and programming the arm, you can gain valuable experience in motor control, kinematics, and programming. This project not only demonstrates the fundamental principles of robotics but also provides a platform for future exploration into more complex robotic systems.
+    </p>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

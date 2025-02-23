@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WiFi Security Camera | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>WiFi Security Camera</h1>
+    <p>DiscereMinds | Empowering STEM Education</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      This project will guide you through building a WiFi-enabled security camera using a Raspberry Pi, a camera module, and Python programming. The camera captures images or videos, which are then uploaded to a cloud storage service or accessible through a web interface. By using a WiFi connection, you can monitor your home or office remotely via any device with a web browser.
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        A security camera system provides peace of mind by monitoring and recording activity around your home or office. By creating a WiFi-enabled camera, you can remotely access live footage or saved video feeds from anywhere with an internet connection. This project teaches valuable skills in hardware interfacing, programming, cloud integration, and networking. The ability to build such a system gives you a deeper understanding of IoT (Internet of Things) devices and the ways they connect and communicate over the internet.
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>Raspberry Pi (Raspberry Pi 3 or later recommended)</li>
+      <li>Raspberry Pi Camera Module or USB Webcam</li>
+      <li>MicroSD card (8GB or larger) with Raspbian OS installed</li>
+      <li>WiFi dongle (if not using a Raspberry Pi with built-in WiFi)</li>
+      <li>Power supply for the Raspberry Pi</li>
+      <li>Optional: PIR motion sensor for motion detection</li>
+      <li>Optional: Infrared (IR) LEDs for night vision</li>
+      <li>Optional: Cloud storage service (e.g., Google Drive, Dropbox) or own server for storing videos</li>
+      <li>Optional: Flask (Python web framework) for building a web interface</li>
+      <li>Jumper wires and breadboard (if using sensors)</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>First, set up your Raspberry Pi with Raspbian OS. Ensure it’s connected to the internet via WiFi or Ethernet. If you’re using a Raspberry Pi 3 or later, it will already have WiFi built-in. If you’re using an earlier model, connect a WiFi dongle to the Raspberry Pi.</li>
+      <li>Next, connect your Raspberry Pi Camera Module to the camera port on the Raspberry Pi or plug in a USB webcam into one of the available USB ports.</li>
+      <li>Now, enable the camera module through the Raspberry Pi Configuration tool. You can do this by opening the terminal and typing:
+        <code>sudo raspi-config</code>, then selecting "Interfacing Options" and enabling the camera.</li>
+      <li>Install the necessary Python libraries for video capture and streaming. You can install the <code>picamera</code> library for Raspberry Pi Camera or <code>opencv-python</code> for USB webcams by running:
+        <code>sudo apt-get install python-picamera</code> or <code>pip install opencv-python</code>.</li>
+      <li>Now, write the Python code for capturing video or taking snapshots. For instance, to capture a simple image using the camera, the Python script might look like this:
+        <pre>
+        from picamera import PiCamera
+        from time import sleep
+        camera = PiCamera()
+        camera.start_preview()
+        sleep(5)
+        camera.capture('/home/pi/Desktop/image.jpg')
+        camera.stop_preview()
+        </pre>
+      </li>
+      <li>For video streaming, you can use OpenCV to capture video frames and stream them over the internet. Here’s an example of setting up a simple video stream server using Flask and OpenCV:
+        <pre>
+        from flask import Flask, Response
+        import cv2
+
+        app = Flask(__name__)
+        camera = cv2.VideoCapture(0)  # Using the default webcam
+
+        def gen():
+            while True:
+                ret, frame = camera.read()
+                if not ret:
+                    break
+                _, jpeg = cv2.imencode('.jpg', frame)
+                frame = jpeg.tobytes()
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+        @app.route('/video_feed')
+        def video_feed():
+            return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+        if __name__ == '__main__':
+            app.run(host='0.0.0.0', port=5000, debug=True)
+        </pre>
+      </li>
+      <li>After setting up the video streaming server, you can access the stream from any device by navigating to <code>http://<RaspberryPi_IP>:5000/video_feed</code> in a web browser.</li>
+      <li>If you want to enable motion detection, you can connect a PIR sensor to the Raspberry Pi and modify the Python code to trigger video recording or snapshots when motion is detected. Here's an example:
+        <pre>
+        import RPi.GPIO as GPIO
+        import time
+
+        PIR_PIN = 7  # The GPIO pin connected to the PIR sensor
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(PIR_PIN, GPIO.IN)
+
+        def motion_detected(PIR_PIN):
+            print("Motion Detected!")
+            # Add your video recording or snapshot code here
+
+        GPIO.add_event_detect(PIR_PIN, GPIO.RISING, callback=motion_detected)
+        while True:
+            time.sleep(1)
+        </pre>
+      </li>
+      <li>Optional: Set up cloud storage services (e.g., Google Drive, Dropbox) to automatically upload captured videos or images. You can use the Python libraries for Google API or Dropbox API to handle file uploads.</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      Once your system is set up and running, you should be able to monitor the live video feed remotely through a web browser. The system should be able to detect motion (if the PIR sensor is used) and trigger actions such as taking snapshots or recording video clips. The camera captures the feed in real-time, allowing for remote monitoring of the premises.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>Ensure your Raspberry Pi has enough processing power for smooth video streaming, especially if you plan to stream HD video.</li>
+        <li>For outdoor setups, consider placing the camera inside a weatherproof housing to protect it from the elements.</li>
+        <li>If using motion detection, you may need to fine-tune the sensitivity of the PIR sensor to avoid false alarms from pets or environmental changes.</li>
+        <li>Consider adding additional security features such as email notifications or SMS alerts when motion is detected.</li>
+        <li>If you’re using a cloud service for storage, check for any storage limits or costs associated with large video files.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      A security camera works by capturing images or video from its environment using a camera module. The captured video frames are then processed and transmitted to a remote server or cloud storage for later access. When combined with motion sensors, a camera system becomes capable of alerting you when there is activity in its field of view. The integration of cloud storage or web-based streaming allows you to access the camera feed from anywhere in the world, provided you have an internet connection.
+    </p>
+
+    <p>
+      The Raspberry Pi makes an excellent platform for building a low-cost security camera system. With its compact size, WiFi capabilities, and GPIO pins for connecting additional sensors, the Raspberry Pi provides an ideal foundation for creating an Internet of Things (IoT) device that can integrate with other systems and provide valuable security features.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=WiFi+Security+Camera" alt="WiFi Security Camera">
+
+    <h2>Further Exploration</h2>
+    <p>
+      You can extend this project in numerous ways. For instance, you can integrate face recognition algorithms to automatically identify people. You could also set up an email notification system that alerts you when motion is detected. Additionally, consider using a server to store footage and set up a cloud-based backup to ensure your recordings are secure and accessible even if your local device is damaged.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Building a WiFi-enabled security camera with a Raspberry Pi is an excellent way to learn about IoT, video streaming, and networking. This project provides hands-on experience with sensors, programming, and cloud integration, which are all valuable skills in today’s world of connected devices. Whether you're building a security system for your home or exploring the possibilities of remote monitoring, this project is a great introduction to the power and flexibility of the Raspberry Pi.
+    </p>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

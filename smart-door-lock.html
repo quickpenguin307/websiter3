@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Door Lock System | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Smart Door Lock System</h1>
+    <p>DiscereMinds | Innovating Home Security</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this project, you will learn how to build a smart door lock system using an Arduino, fingerprint sensor, and servo motor. The system allows only authorized users to unlock the door by scanning their fingerprints, ensuring both security and convenience. This project demonstrates how biometric authentication can be integrated into everyday applications for enhanced safety.
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        The fingerprint sensor scans and identifies fingerprints by creating a unique template for each user. The Arduino processes this information and compares it with stored templates. If the fingerprint matches an authorized user, the Arduino activates the servo motor, which unlocks the door. The system provides a secure, easy-to-use, and automated method for unlocking doors.
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>1 Arduino board (Uno, Nano, etc.)</li>
+      <li>1 Fingerprint sensor module (e.g., R305)</li>
+      <li>1 Servo motor</li>
+      <li>1 5V power supply</li>
+      <li>Jumper wires</li>
+      <li>Breadboard</li>
+      <li>Optional: 3D-printed enclosure for the fingerprint sensor</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>Connect the fingerprint sensor to the Arduino. Connect the sensor's TX and RX pins to the Arduino's RX and TX pins, respectively, and the sensor’s VCC and GND to the Arduino's 5V and GND.</li>
+      <li>Next, connect the servo motor to one of the Arduino's digital pins (e.g., D9) and ensure it’s connected to the 5V and GND pins for power.</li>
+      <li>Write the code in the Arduino IDE to interface with the fingerprint sensor. The code should include functions for enrolling new fingerprints and verifying if the scanned fingerprint matches an authorized user.</li>
+      <li>Upload the code to the Arduino. You will need to enroll at least one fingerprint using the sensor's library.</li>
+      <li>Once enrolled, test the system by scanning your fingerprint. If the fingerprint is recognized, the servo motor will activate, unlocking the door.</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      When a registered user places their finger on the sensor, the system will compare the scanned fingerprint with the stored templates. If a match is found, the servo motor will rotate to unlock the door. If the fingerprint doesn't match, the door remains locked, ensuring that unauthorized users cannot gain access.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>Ensure that the fingerprint sensor is clean and free from dirt or moisture, as this may interfere with fingerprint recognition.</li>
+        <li>Test the system with different fingers to ensure accuracy and reliability of the fingerprint matching process.</li>
+        <li>If you're using a servo motor, ensure it is strong enough to operate the door lock mechanism.</li>
+        <li>For added security, you can add a second layer of authentication, such as a password or RFID card reader, to complement the fingerprint sensor.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      The fingerprint sensor works by capturing an image of the fingerprint and analyzing unique features such as ridge patterns and minutiae points. The sensor then converts this image into a digital template. The Arduino compares the scanned fingerprint against the stored templates in its memory. If a match is found, the servo motor is activated to unlock the door. This process leverages biometrics for secure identification, making it difficult to bypass without the registered fingerprint.
+    </p>
+    <p>
+      Servo motors are often used in robotics and automation systems because they provide precise control over rotation. In this case, the servo motor is used to turn the lock mechanism when the door is unlocked. By combining the fingerprint sensor and servo motor with the Arduino, we create a highly effective automated lock system.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Smart+Door+Lock+System" alt="Smart Door Lock System">
+
+    <h2>Further Exploration</h2>
+    <p>
+      You can expand this project by integrating additional features, such as a web-based interface for adding or removing authorized fingerprints. Alternatively, you can experiment with other biometric sensors, such as facial recognition cameras or iris scanners, to further enhance the security of the system.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      The smart door lock system is a practical application of biometric authentication, providing an innovative way to secure access to a home or office. By combining an Arduino with a fingerprint sensor and servo motor, this project demonstrates how simple components can create a secure and automated system. This project also opens the door to further advancements in home automation and security technologies.
+    </p>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Sensor Project | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Temperature Sensor Project</h1>
+    <p>DiscereMinds | Exploring Temperature Sensing</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this project, you'll learn how to use a temperature sensor with an Arduino to measure the temperature in your environment. You’ll also display the temperature readings on an LCD screen. Temperature sensors are widely used in various applications such as weather stations, home automation, and industrial monitoring.
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        Temperature sensors measure the thermal energy of the environment around them. The sensor converts temperature into a corresponding voltage, which the Arduino can read and convert into a digital temperature value. This project allows you to see how changes in temperature affect the sensor's readings and how this data can be displayed in real time.
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>1 Arduino board (Uno, Nano, etc.)</li>
+      <li>1 Temperature sensor (e.g., LM35 or DHT11)</li>
+      <li>1 LCD display (16x2 or similar)</li>
+      <li>1 10kΩ potentiometer (for LCD contrast adjustment)</li>
+      <li>Jumper wires</li>
+      <li>Breadboard</li>
+      <li>USB cable for powering the Arduino</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>Place the temperature sensor on your breadboard. If you are using the LM35, connect the VCC pin to 5V, the GND pin to GND, and the OUT pin to A0 (analog input) on the Arduino.</li>
+      <li>Connect the LCD display to the Arduino, making sure to connect the VCC, GND, SDA, and SCL pins correctly (you may need an I2C LCD for easier connection).</li>
+      <li>Adjust the potentiometer to set the contrast of the LCD screen.</li>
+      <li>Open the Arduino IDE and write the code to read the temperature sensor’s value and display it on the LCD screen.</li>
+      <li>Upload the code to the Arduino. The LCD will now display the current temperature reading in Celsius or Fahrenheit (depending on the code you used).</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      You should see the temperature readings being displayed on the LCD screen. As the temperature in the room changes, the sensor will detect these changes and update the display accordingly. This demonstrates how sensors can be used to monitor and display real-time data.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>If you want to display the temperature in Fahrenheit, modify the code to convert the Celsius value into Fahrenheit.</li>
+        <li>Ensure the sensor is placed in an open area to get accurate readings. Avoid placing it near heat sources like a computer or a fan.</li>
+        <li>If the display is faint, try adjusting the potentiometer until the contrast is visible.</li>
+        <li>Experiment with placing the sensor in different environments and monitor how the temperature readings change over time.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      Temperature sensors like the LM35 or DHT11 work based on changes in voltage that correspond to temperature variations. The LM35, for instance, provides a linear output where the voltage increases by 10mV for every degree Celsius increase in temperature. The Arduino reads the voltage through its analog input, processes it, and displays the value in a human-readable form.
+    </p>
+    <p>
+      This project highlights how sensors collect data from the environment and how microcontrollers can process that data. By using the analog-to-digital converter (ADC) on the Arduino, the voltage from the sensor is converted into a digital value that can be displayed or used to trigger actions.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Temperature+Sensor+Project" alt="Temperature Sensor Project">
+
+    <h2>Further Exploration</h2>
+    <p>
+      To take this project further, you can try using a DHT11 sensor to measure both temperature and humidity. You could also log the temperature data to an SD card or send it to the cloud to create a remote monitoring system. You can also explore how temperature sensors are used in systems like thermostats and weather stations.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      The temperature sensor project is a great introduction to sensor technology and how environmental data can be collected, processed, and displayed. It has a wide range of applications, from simple temperature monitoring to more advanced automation systems. By completing this project, you will have a better understanding of how sensors interact with microcontrollers and how they can be used to automate systems and provide valuable data.
+    </p>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

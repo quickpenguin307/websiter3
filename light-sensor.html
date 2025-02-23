@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light Sensor Experiment | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-size: 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Light Sensor Experiment</h1>
+    <p>DiscereMinds | Empowering STEM Education</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this project, you'll build a simple light sensor using an Arduino and a photoresistor (LDR). The sensor will detect ambient light levels and output the readings to the Serial Monitor.
+    </p>
+
+    <h2>Components Required</h2>
+    <ul>
+      <li>Arduino Uno (or similar)</li>
+      <li>Photoresistor (LDR)</li>
+      <li>10k ohm resistor</li>
+      <li>Breadboard</li>
+      <li>Jumper wires</li>
+    </ul>
+
+    <h2>Circuit Diagram</h2>
+    <p>
+      Connect the photoresistor in series with a 10k ohm resistor to form a voltage divider. Connect the junction between the photoresistor and resistor to the Arduino's analog input pin A0.
+    </p>
+    <img src="https://via.placeholder.com/600x300?text=Circuit+Diagram" alt="Circuit Diagram" />
+
+    <h2>Arduino Code</h2>
+    <p>Upload the following code to your Arduino board using the Arduino IDE:</p>
+    <pre><code>
+void setup() {
+  Serial.begin(9600);  // Initialize serial communication at 9600 bps
+}
+
+void loop() {
+  int sensorValue = analogRead(A0);  // Read the input on analog pin A0
+  Serial.print("Light Sensor Value: ");
+  Serial.println(sensorValue);       // Print the value to the Serial Monitor
+  delay(500);                        // Wait for 500 milliseconds before the next reading
+}
+    </code></pre>
+
+    <h2>Instructions</h2>
+    <ol>
+      <li>Gather all the required components.</li>
+      <li>Assemble the circuit as described in the circuit diagram.</li>
+      <li>Connect your Arduino to your computer and open the Arduino IDE.</li>
+      <li>Upload the provided code to your Arduino.</li>
+      <li>Open the Serial Monitor (set to 9600 baud) to view the sensor readings in real time.</li>
+      <li>Experiment by changing the light conditions around the sensor and observe the changes in the sensor value.</li>
+    </ol>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

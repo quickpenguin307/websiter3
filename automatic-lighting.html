@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Lighting System | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Automatic Lighting System</h1>
+    <p>DiscereMinds | Smart Home Innovations</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      This project demonstrates how to create an automatic lighting system using a light-dependent resistor (LDR) and an Arduino. The lights will turn on when the surrounding light level drops below a certain threshold and turn off when the light level rises again. This system is an excellent example of how sensors can be used to automate everyday tasks, enhancing energy efficiency and convenience.
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        The automatic lighting system uses an LDR, which changes its resistance depending on the amount of light falling on it. The Arduino reads the resistance value from the LDR and uses that data to control a relay, turning the light on or off. This system mimics the way automatic lighting systems work in real-world applications such as streetlights and home lighting.
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>1 Arduino board (Uno, Nano, etc.)</li>
+      <li>1 Light Dependent Resistor (LDR)</li>
+      <li>1 Relay module</li>
+      <li>1 LED or a small light bulb</li>
+      <li>1 10kΩ resistor</li>
+      <li>Jumper wires</li>
+      <li>Breadboard</li>
+      <li>USB cable for powering the Arduino</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>Place the LDR on your breadboard. Connect one leg of the LDR to 5V and the other leg to the analog input A0 on the Arduino.</li>
+      <li>Attach a 10kΩ resistor between the analog input pin (A0) and GND to create a voltage divider with the LDR.</li>
+      <li>Connect the relay module to the Arduino. The relay's control pin should go to a digital pin on the Arduino (e.g., D2).</li>
+      <li>Connect the LED or small light bulb to the relay, ensuring that the relay controls the power to the light.</li>
+      <li>Write the code in the Arduino IDE to read the light levels from the LDR and control the relay based on those values.</li>
+      <li>Upload the code to the Arduino. The system will now automatically turn the light on when the light level falls below a certain threshold and turn it off when the light level rises.</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      As the light intensity in the room changes, the LDR will adjust its resistance, which in turn affects the voltage being read by the Arduino. When the light level drops below the set threshold, the relay is activated, turning the light on. When the light level rises above the threshold, the relay is deactivated, turning the light off.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>To adjust the sensitivity of the system, modify the threshold value in the code based on the light level you want to detect.</li>
+        <li>If the light doesn’t turn on or off correctly, check the connections, especially the relay and the LDR, to ensure they’re properly connected to the Arduino.</li>
+        <li>Use an actual light bulb for a more realistic demonstration of the system. Ensure the relay can handle the power rating of the light bulb.</li>
+        <li>Try using the system in different environments to see how it responds to varying light conditions.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      The LDR is a type of resistor whose resistance decreases as the amount of light falling on it increases. In low light conditions, the resistance of the LDR is high, causing a higher voltage drop across the resistor. The Arduino reads this voltage via an analog input pin and processes it. Based on the voltage reading, the Arduino can determine whether the light is on or off and activate the relay accordingly to control the light.
+    </p>
+    <p>
+      This project demonstrates how sensors can automate tasks by integrating with microcontrollers. In this case, the LDR sensor allows the system to respond to environmental changes (light intensity) without the need for manual intervention.
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Automatic+Lighting+System" alt="Automatic Lighting System">
+
+    <h2>Further Exploration</h2>
+    <p>
+      You can modify this system to turn on multiple lights based on different light levels or even connect it to a smart home system. You could also integrate a real-time clock (RTC) module to control the lighting based on time of day or set schedules.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      The automatic lighting system is a simple yet powerful demonstration of how sensors and automation can be used to improve energy efficiency. By using an LDR, Arduino, and relay, you can create a system that automatically adjusts lighting based on environmental conditions, providing both convenience and energy savings.
+    </p>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>

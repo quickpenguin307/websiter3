@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion Sensor Detector | DiscereMinds</title>
+  <style>
+    /* Reset and Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    p, li {
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .intro p {
+      font-style: italic;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .experiment-tips {
+      background: #f8f9fa;
+      border-left: 4px solid #1d2671;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #a01f4d;
+    }
+    .experiment-tips ul {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-width Header -->
+  <header>
+    <h1>Motion Sensor Detector</h1>
+    <p>DiscereMinds | Innovating with Sensors</p>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      In this exciting project, you will learn how to create a motion sensor detector using an Arduino and a PIR sensor. This motion sensor will allow you to detect movement in its vicinity, making it ideal for security systems, automation, and interactive displays. Follow this simple guide to get started!
+    </p>
+
+    <div class="intro">
+      <h3>Why This Project Works</h3>
+      <p>
+        Motion sensors work based on the detection of infrared radiation emitted by warm bodies like humans and animals. The PIR (Passive Infrared) sensor is designed to detect these infrared waves, triggering actions such as turning on an LED or sounding a buzzer when motion is detected. This project will demonstrate the effectiveness of using such sensors to automate your surroundings.
+      </p>
+    </div>
+
+    <h2>Materials Required</h2>
+    <ul>
+      <li>1 Arduino board (Uno, Nano, etc.)</li>
+      <li>1 PIR Motion Sensor</li>
+      <li>1 LED</li>
+      <li>1 220-ohm resistor (for LED)</li>
+      <li>1 Buzzer (optional for sound notification)</li>
+      <li>Jumper wires and breadboard</li>
+      <li>USB cable for powering the Arduino</li>
+    </ul>
+
+    <h2>Procedure</h2>
+    <ol>
+      <li>Place the PIR sensor on your breadboard and wire it to the Arduino. Connect the VCC to 5V, GND to GND, and the OUT pin to pin 7 of the Arduino.</li>
+      <li>Connect an LED to pin 13 on the Arduino and the ground (GND) through a 220-ohm resistor.</li>
+      <li>Optionally, connect a buzzer to pin 8 of the Arduino for audio feedback.</li>
+      <li>Open the Arduino IDE, write the code to control the sensor, and upload it to your board.</li>
+      <li>Once the code is uploaded, the system will start detecting motion and trigger the LED and/or buzzer when movement is detected.</li>
+    </ol>
+
+    <h2>Observations</h2>
+    <p>
+      You should notice that whenever someone walks by the PIR sensor, the LED lights up, and if you included the buzzer, it will also make a sound. If no movement is detected, the system should remain idle with the LED off.
+    </p>
+
+    <div class="experiment-tips">
+      <h3>Experiment Tips:</h3>
+      <ul>
+        <li>Ensure that the PIR sensor is placed in a location where it has a clear view of the area you want to monitor.</li>
+        <li>If you are using the buzzer, consider adjusting the code to make the buzzer sound for a longer or shorter period depending on your preference.</li>
+        <li>Experiment with different sensor placements and test how the motion detection range changes based on where the sensor is positioned.</li>
+      </ul>
+    </div>
+
+    <h2>Explanation of the Science Behind It</h2>
+    <p>
+      The PIR sensor detects infrared radiation emitted by living bodies and uses this information to detect motion. The principle behind this technology is that humans and animals emit infrared radiation at a certain wavelength, which is different from the background infrared radiation. When a moving object interrupts this wavelength, the sensor sends a signal to the Arduino, which triggers the connected output devices (LED, buzzer, etc.).
+    </p>
+
+    <img src="https://via.placeholder.com/600x300?text=Motion+Sensor+Detector" alt="Motion Sensor Detector">
+
+    <h2>Further Exploration</h2>
+    <p>
+      You can enhance this basic motion sensor setup by integrating it with more advanced systems, such as adding a camera for security purposes or integrating the system with a smart home network. Experiment with adding different output devices like motors or relays to automate other devices based on motion detection.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      The motion sensor detector is a simple yet effective way to learn about sensors, automation, and the capabilities of Arduino. It can be used in various applications, from home security systems to interactive projects. By experimenting with different sensor configurations and outputs, you can create more complex systems for automation and monitoring.
+    </p>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+  </div>
+</body>
+</html>
